@@ -1,0 +1,80 @@
+  
+
+private String JSON_STRING;
+    String number;
+    int CALL_PERMISSION_REQUEST_CODE=1,num=50;
+    String ID="20303140102388";
+
+
+  public void emergency(){
+        Intent intent = new Intent(Intent.ACTION_CALL);
+        intent.setData(Uri.parse("tel:"+number));
+        Toast.makeText(this, "Emergency", Toast.LENGTH_SHORT).show();
+        if (ActivityCompat.checkSelfPermission(emergency_call.this,
+                Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            askForCallPermission();
+            return;
+        }
+        startActivity(intent);
+    }
+
+    private void askForCallPermission() {
+        ActivityCompat.requestPermissions(emergency_call.this,
+                new String[]{Manifest.permission.CALL_PHONE},
+                CALL_PERMISSION_REQUEST_CODE);
+    }
+
+
+    private void number(String ID) {
+        JSONObject jsonObject = null;
+        Toast.makeText(this, "Number", Toast.LENGTH_SHORT).show();
+        try {
+            jsonObject = new JSONObject(JSON_STRING);
+            JSONArray result = jsonObject.getJSONArray("number");
+            for(int i = 0; i<result.length(); i++){
+                JSONObject jo = result.getJSONObject(i);
+
+                // to get only this patient's ID's data
+                String ID_back = jo.getString("ID");
+                if(ID_back.equals(ID)){
+                    number = jo.getString("number");
+                    break;
+                }}
+
+        } catch (JSONException e) {
+            Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+        }
+
+
+    }
+
+    private void getJSON(){
+        class GetJSON extends AsyncTask<Void,Void,String> {
+
+            ProgressDialog loading;
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                loading = ProgressDialog.show(emergency_call.this,"Fetching Data","Wait...",false,false);
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                loading.dismiss();
+                JSON_STRING = s;
+                 number(ID);
+            }
+
+            @Override
+            protected String doInBackground(Void... v) {
+                RequestHandler rh = new RequestHandler();
+                String s = rh.sendGetRequestParam("http://10.0.2.2/connection/number_emergancy.php");
+                System.out.println("result in backgrpound ----------------->  "+s);
+                return s;
+            }
+        }
+        GetJSON gj = new GetJSON();
+        gj.execute();
+    }

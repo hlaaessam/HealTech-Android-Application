@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".patient.patient.HomepActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="114dp"
+        tools:layout_editor_absoluteY="357dp">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/custom_bg_layout"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:verticalScrollbarPosition="defaultPosition"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/view"
+                    android:layout_marginTop="75dp"
+                    android:rowCount="4"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view"
+                    app:layout_constraintVertical_bias="1.0">
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/card1"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_row="0"
+                        android:layout_margin="12dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginEnd="24dp"
+                        android:elevation="28dp"
+                        app:cardCornerRadius="18dp"
+                        app:layout_constraintBottom_toBottomOf="@id/view"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/view">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <GridLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:columnCount="3"
+                                android:rowCount="2">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_row="0"
+                                    android:layout_column="0"
+                                    android:layout_marginStart="24dp"
+                                    android:layout_marginTop="24dp"
+                                    android:layout_marginEnd="24dp"
+                                    android:text="Blood Pressure"
+                                    android:textColor="@color/Teal"
+                                    android:textSize="17sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/BP"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="60dp"
+                                    android:layout_row="1"
+                                    android:layout_column="0"
+                                    android:layout_marginStart="24dp"
+                                    android:layout_marginTop="24dp"
+                                    android:layout_marginEnd="24dp"
+                                    android:hint="120/80"
+                                    android:textColor="@color/Teal"
+                                    android:textSize="30sp" />
+
+                                <ImageView
+                                    android:layout_row="1"
+                                    android:layout_column="2"
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:background="@drawable/blood_pressure_card"/>
+                            </GridLayout>
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/card2"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_row="1"
+                        android:layout_column="0"
+                        android:layout_margin="12dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginEnd="24dp"
+                        android:elevation="28dp"
+                        app:cardCornerRadius="18dp"
+                        app:layout_constraintBottom_toBottomOf="@id/card1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/view">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <GridLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:columnCount="3"
+                                android:rowCount="2">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_row="0"
+                                    android:layout_column="0"
+                                    android:layout_marginStart="24dp"
+                                    android:layout_marginTop="24dp"
+                                    android:layout_marginEnd="24dp"
+                                    android:text="Oxygen"
+                                    android:textColor="@color/Teal"
+                                    android:textSize="17sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/O"
+                                    android:layout_width="60dp"
+                                    android:layout_height="60dp"
+                                    android:layout_row="1"
+                                    android:layout_column="0"
+                                    android:layout_marginStart="24dp"
+                                    android:layout_marginTop="24dp"
+                                    android:layout_marginEnd="24dp"
+                                    android:hint="95"
+                                    android:textColor="@color/Teal"
+                                    android:textSize="30sp" />
+
+                                <ImageView
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_row="1"
+                                    android:layout_column="2"
+                                    android:background="@drawable/oxygen_saturation_card" />
+
+                            </GridLayout>
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/card3"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_row="2"
+                        android:layout_column="0"
+                        android:layout_margin="12dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginEnd="24dp"
+                        android:elevation="28dp"
+                        app:cardCornerRadius="18dp"
+                        app:layout_constraintBottom_toBottomOf="@id/card2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/view">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <GridLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:columnCount="3"
+                                android:rowCount="2">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_row="0"
+                                    android:layout_column="0"
+                                    android:layout_marginStart="24dp"
+                                    android:layout_marginTop="24dp"
+                                    android:layout_marginEnd="24dp"
+                                    android:text="Temperature"
+                                    android:textColor="@color/Teal"
+                                    android:textSize="17sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/T"
+                                    android:layout_width="60dp"
+                                    android:layout_height="60dp"
+                                    android:layout_row="1"
+                                    android:layout_column="0"
+                                    android:layout_marginStart="24dp"
+                                    android:layout_marginTop="24dp"
+                                    android:layout_marginEnd="24dp"
+                                    android:hint="37"
+                                    android:textColor="@color/Teal"
+                                    android:textSize="30sp" />
+
+                                <ImageView
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_row="1"
+                                    android:layout_column="2"
+                                    android:background="@drawable/temperature" />
+
+                            </GridLayout>
+                        </LinearLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/card4"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_row="3"
+                        android:layout_column="0"
+                        android:layout_margin="12dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginEnd="24dp"
+                        android:elevation="28dp"
+                        app:cardCornerRadius="18dp"
+                        app:layout_constraintBottom_toBottomOf="@id/card3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/view">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <GridLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:columnCount="3"
+                                android:rowCount="2">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_row="0"
+                                    android:layout_column="0"
+                                    android:layout_marginStart="24dp"
+                                    android:layout_marginTop="24dp"
+                                    android:layout_marginEnd="24dp"
+                                    android:text="Heart Rate"
+                                    android:textColor="@color/Teal"
+                                    android:textSize="17sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/HR"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_row="1"
+                                    android:layout_column="0"
+                                    android:layout_marginStart="24dp"
+                                    android:layout_marginTop="24dp"
+                                    android:layout_marginEnd="24dp"
+                                    android:hint="120"
+                                    android:textColor="@color/Teal"
+                                    android:textSize="30sp" />
+
+                                <ImageView
+                                    android:layout_width="60dp"
+                                    android:layout_height="60dp"
+                                    android:layout_row="1"
+                                    android:layout_column="2"
+                                    android:background="@drawable/heart_rate_card" />
+
+                            </GridLayout>
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+
+                </GridLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <com.getbase.floatingactionbutton.FloatingActionsMenu
+            android:layout_width="19dp"
+            android:layout_height="203dp"
+            android:layout_above="@+id/bottomNavigationp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="315dp"
+            android:layout_marginTop="320dp"
+            android:layout_marginBottom="63dp"
+            android:src="@drawable/ic_add"
+            app:fab_addButtonColorNormal="@color/Teal3"
+            app:fab_addButtonColorPressed="#d1c0ab"
+            app:fab_addButtonPlusIconColor="#ffff"
+            app:fab_labelStyle="@style/floatingbuttonpatient">
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingsymptomsbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fabSize="mini"
+                app:fab_colorNormal="@color/Teal3"
+                app:fab_colorPressed="@color/bijcolor"
+                app:fab_icon="@drawable/ic_symptoms1" />
+
+        </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+
+        <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+            android:id="@+id/bottomNavigationp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:mbn_backgroundBottomColor="#446b6d"
+            app:mbn_circleColor="#ffffff"
+            app:mbn_countBackgroundColor="#ff6f00"
+            app:mbn_countTextColor="#ffffff"
+            app:mbn_defaultIconColor="#90a4ae"
+            app:mbn_rippleColor="#2f424242"
+            app:mbn_selectedIconColor="#d1c0ab"
+            app:mbn_shadowColor="#1f212121" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/toolbar_patient" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
